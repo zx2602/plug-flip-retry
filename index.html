@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flip or Retry</title>
+  <meta name="description" content="A small interaction about choosing what to change after ambiguous failure feedback.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="demo" aria-labelledby="page-title">
+    <header>
+      <p class="eyebrow">Ambiguous feedback</p>
+      <h1 id="page-title">Flip or retry?</h1>
+      <p class="instruction">The last attempt was blocked. Choose what to change next.</p>
+    </header>
+
+    <section class="attempt" aria-label="Current insertion attempt">
+      <div class="apparatus" aria-hidden="true">
+        <div class="socket"><span></span><span></span></div>
+        <div class="plug" id="plug">
+          <span class="orientation-mark"></span>
+          <span class="prong"></span>
+          <span class="prong"></span>
+        </div>
+      </div>
+
+      <p class="attempt-meta" id="attempt-meta">Attempt 1 · Orientation A</p>
+      <p class="result is-blocked" id="result" role="status" aria-live="polite">Blocked</p>
+    </section>
+
+    <div class="actions" aria-label="Choose the next attempt">
+      <button type="button" id="flip-button">Flip and try again</button>
+      <button type="button" class="secondary" id="retry-button">Retry as is</button>
+    </div>
+
+    <section class="history-section" aria-labelledby="history-title">
+      <h2 id="history-title">Attempts</h2>
+      <ol id="history" class="history">
+        <li><span>1</span><span>Orientation A</span><strong>Blocked</strong></li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
